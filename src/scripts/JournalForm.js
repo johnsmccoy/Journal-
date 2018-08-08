@@ -5,7 +5,7 @@ const FormManager = Object.create(null, {
             document.querySelector("#entryTitle").value = ""
         }
     },
-    renderEntryForm = {
+    renderEntryForm: {
         value: () => {
     return `
         <fieldset>
@@ -19,5 +19,7 @@ const FormManager = Object.create(null, {
         <button id="saveEntryButton">Save Journal Entry</button>
     `
 }
+    }
+    })
 
 module.exports = FormManager

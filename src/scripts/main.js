@@ -1,5 +1,5 @@
 const FormManager = require("./JournalForm")
-const saveEntryButton = require("./DataManager")
+const DataManager = require("./DataManager")
 
 document.querySelector("#journalForm").innerHTML = FormManager.renderEntryForm()
 
@@ -14,8 +14,16 @@ document.querySelector("#saveEntryButton").addEventListener("click", () => {
         date: Date.now()
 
     }
-    saveJournalEntry(newEntry).then(() => {
-        FormManager.clearForm()
 
-    })
+    const saveJournalEntry = (newEntry) => {
+        DataManager(newEntry).then(() => {
+            FormManager.clearForm()
+
+        })
+    }
+
 })
+
+
+
+FormManager("#journalForm", saveNewEntry);
