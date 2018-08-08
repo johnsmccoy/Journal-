@@ -1,4 +1,7 @@
-const saveJournalEntry = (entry) => {
+let journalData = {}
+
+
+journalData.saveJournalEntry = (entry) => {
     return fetch("http://localhost:8088/entries", {
         method: "POST",
         headers: {
@@ -6,7 +9,16 @@ const saveJournalEntry = (entry) => {
         },
         body: JSON.stringify(entry)
     })
-    .then(response => response.json())
+        .then(response => response.json())
+}
+journalData.loadJournalEntry = () => {
+    return fetch("http://localhost:8088/entries")
+        .then(response => response.json())
+}
+journalData.deleteEntry = (lookupId) => {
+    return fetch(`http://localhost:8088/entries/${lookupId}`, {
+        method: "DELETE",
+    })
 }
 
-module.exports = saveJournalEntry
+module.exports = journalData
