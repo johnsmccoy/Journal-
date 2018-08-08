@@ -2,7 +2,7 @@ const FormManager = Object.create(null, {
     clearForm: {
         value: () => {
             document.querySelector("#entryTitle").value = ""
-            document.querySelector("#entryTitle").value = ""
+            document.querySelector("#entryContent").value = ""
         }
     },
     renderEntryForm: {

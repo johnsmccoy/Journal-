@@ -1,3 +1,10 @@
 {
-    "entries": []
+  "entries": [
+    {
+      "title": "john",
+      "content": "is awesome",
+      "date": 1533744779322,
+      "id": 1
+    }
+  ]
 }
